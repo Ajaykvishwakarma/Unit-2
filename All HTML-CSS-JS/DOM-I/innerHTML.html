@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>
+      innerHTML When applied to an element, it returns the text part enclosed by
+      the element, along with the HTML tags inside, and also considers the
+      spacing given inside. Look at the example below.
+    </h3>
+    <h3>
+      textContent When applied to an element, it returns the text part enclosed
+      by the element and considers the spacing given inside. Look at the example
+      below.
+    </h3>
+    <div id="container">
+      <span>I am span inside div</span>
+    </div>
+    <div id="cont2">I am div2</div>
+    <h1 id="masai">I am h1</h1>
+    <h2 id="school">I am h2</h2>
+    <p id="para"></p>
+  </body>
+</html>
+
+<script>
+  console.log(document.getElementById("container").innerHTML);
+  console.log(document.getElementById("container").textContent);
+
+  //   console.log(document.getElementById("container"));
+  //   console.log(document.getElementById("para"));
+
+  // innerHTML -->
+
+  //document.getElementById("para").textContent = "i am new para";
+  document.getElementById("para").innerHTML = "<h1>i am new para</h1>";
+</script>

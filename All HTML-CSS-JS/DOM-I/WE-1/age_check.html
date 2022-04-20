@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Check</title>
+    <style>
+        .Inptag{
+              height:35px;
+              width:150px;
+        }
+        button{
+          padding:10px;
+        }
+    </style>
+  </head>
+
+  <body>
+    <input class="Inptag" type="number" placeholder="enter age" />
+    <button onclick="ageCheck()">Submit</button>
+    <p></p>
+  </body>
+</html>
+
+<script>
+  function ageCheck(){
+     var age = document.querySelector('.Inptag').value;
+    
+     if(age > 18)
+     {
+       document.querySelector('p').textContent = "You can drive in India!";
+     }
+     else if(age < 18)
+     {
+       document.querySelector('p').textContent = " You can't drive in India!"
+     }
+     else{
+      document.querySelector('p').textContent = " You are just old enough to drive in India! "
+        
+     }
+  }
+ 
+</script>

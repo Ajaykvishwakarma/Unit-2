@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p class="main">I am P tag</p>
+    <h1 class="head1">I am H1 tag</h1>
+    <div class="div1">i am div tag</div>
+    <h4 class="main">I am h4</h4>
+  </body>
+</html>
+
+<script>
+  var res = document.getElementsByClassName("main");
+  console.log(res.length);
+
+  //   console.log(document.getElementsByClassName("main")[0].textContent);
+  //   console.log(document.getElementsByClassName("main")[1].textContent);
+
+  for (var i = 0; i < res.length; i++) {
+    console.log(res[i].textContent);
+  }
+
+  
+
+  //it always returns an array
+</script>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <hrad>
+    <title>Card_with_Grid</title>
+    <style>
+        .container{
+            display:grid;
+            grid-template-rows: 200px 200px 200px;
+            grid-template-columns: repeat(12 1fr);
+            grid-gap:50px;
+            padding:70px;
+            background-color: rgba(214, 214, 214, 0.938);
+            grid-template-areas:
+            "a a a a b b b b c c c c"
+            "d d d d e e e e f f f f"
+            "g g g g h h h h i i i i";
+        }
+      
+        .a{
+            background-color: white;
+            grid-area: a;
+            border-radius:5px;
+            display:flex;
+            box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            /* box-shadow: 5px 10px gray; */
+
+        }
+        .b{
+            background-color: white;
+            grid-area: b;
+            border-radius:5px;
+            box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        .c{
+            background-color: white;
+            grid-area: c;
+            border-radius:5px;
+            box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        
+        
+        .d{
+            background-color: white;
+            grid-area: d;
+            box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius:10px;
+        }
+        .e{
+            background-color: white;
+            grid-area: e;
+            border-radius:5px;
+            box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        .f{
+            background-color: white;
+            grid-area: f;
+            box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius:5px;
+        }
+        .g{
+            background-color: white;
+            grid-area: g;
+            box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius:5px;
+        }
+        .h{
+            background-color: white;
+            grid-area: h;
+            box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius:5px;
+        }
+        .i{
+            background-color: white;
+            grid-area: i;
+            border-radius:5px;
+            box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+       
+        .cards{
+            width:100%;
+           
+        }
+        .card{
+            display:flex;
+            width:90%;
+            margin-left:20px;
+            justify-content:space-between;
+        
+        }
+        .card1{
+            margin-left:20px;
+            margin-top:30px;
+        }
+        .card > div:nth-child(2){
+            color: rgb(197, 101, 12);
+        }
+        .card1>p{
+            color:rgb(192, 192, 179);
+            font-size:20px;
+        }
+
+    </style>
+    </hrad>
+    <body>
+        <div id="main">
+            <div class="container">
+                <div class="a">
+                    <div class="cards" >
+                        <div class="card" >
+                                <div><h2>Cappunico</h2></div> 
+                                <div> <h2>$49</h2></div>
+                        </div> 
+                        <div class="card1">
+                            <p>Usage of the Internet is becomming more common
+                                 due to rapid advance</p></div> 
+                        </div>
+
+                </div>
+                <div class="b">
+                    <div class="cards" >
+                        <div class="card" >
+                                <div><h2>Americano</h2></div> 
+                                <div> <h2>$49</h2></div>
+                        </div> 
+                        <div class="card1">
+                            <p>Usage of the Internet is becomming more common
+                                 due to rapid advance</p></div> 
+                        </div>
+
+                </div>
+                <div class="c">
+                    <div class="cards" >
+                        <div class="card" >
+                                <div><h2>Espresso</h2></div> 
+                                <div> <h2>$49</h2></div>
+                        </div> 
+                        <div class="card1">
+                            <p>Usage of the Internet is becomming more common
+                                 due to rapid advance</p></div> 
+                        </div>
+
+
+                </div>
+                <div class="d">
+                    <div class="cards" >
+                        <div class="card" >
+                                <div><h2>Mocchiato</h2></div> 
+                                <div> <h2>$49</h2></div>
+                        </div> 
+                        <div class="card1">
+                            <p>Usage of the Internet is becomming more common
+                                 due to rapid advance</p></div> 
+                        </div>
+
+
+                </div>
+                <div class="e">
+                    <div class="cards" >
+                        <div class="card" >
+                                <div><h2>Mocha</h2></div> 
+                                <div> <h2>$49</h2></div>
+                        </div> 
+                        <div class="card1">
+                            <p>Usage of the Internet is becomming more common
+                                 due to rapid advance</p></div> 
+                        </div>
+
+                </div>
+                <div class="f">
+                    <div class="cards" >
+                        <div class="card" >
+                                <div><h2>Coffe Lotte</h2></div> 
+                                <div> <h2>$49</h2></div>
+                        </div> 
+                        <div class="card1">
+                            <p>Usage of the Internet is becomming more common
+                                 due to rapid advance</p></div> 
+                        </div>
+
+                </div>
+                <div class="g">
+                    <div class="cards" >
+                        <div class="card" >
+                                <div><h2>Piccolo Lotte</h2></div> 
+                                <div> <h2>$49</h2></div>
+                        </div> 
+                        <div class="card1">
+                            <p>Usage of the Internet is becomming more common
+                                 due to rapid advance</p></div> 
+                        </div>
+
+
+                </div>
+                <div class="h">
+                    <div class="cards" >
+                        <div class="card" >
+                                <div><h2>Ristretto</h2></div> 
+                                <div> <h2>$49</h2></div>
+                        </div> 
+                        <div class="card1">
+                            <p>Usage of the Internet is becomming more common
+                                 due to rapid advance</p></div> 
+                        </div>
+
+                </div>
+                <div class="i">
+                    <div class="cards" >
+                        <div class="card" >
+                                <div><h2>Affogoto</h2></div> 
+                                <div> <h2>$49</h2></div>
+                        </div> 
+                        <div class="card1">
+                            <p>Usage of the Internet is becomming more common
+                                 due to rapid advance</p></div> 
+                        </div>
+
+
+                </div>
+    
+            </div>
+        </div>
+
+    </body>
+</html>

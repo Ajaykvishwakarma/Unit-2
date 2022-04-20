@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Layout_1</title>
+        <style>
+            #container{
+                display:grid;
+                grid-template-rows: 100px 250px;
+                grid-template-columns: repeat(12 1fr);
+                grid-gap:30px;
+                font-size: 40px;
+                padding:20px;
+                margin-top:20px;
+                grid-template-areas: 
+                "a a a a a a a a a a a a"
+                "b b b c c c d d d e e e"
+                ;
+
+            }
+            .a{
+                background-color:yellow;
+                grid-area: a;
+                padding:30px;
+            }
+            .b{
+                background-color:red;
+                grid-area: b;
+                padding:30px;
+            }
+            .c{
+                background-color:green;
+                grid-area: c;
+                padding:30px;
+            }
+            .d{
+                background-color:blue;
+                grid-area: d;
+                padding:30px;
+            }
+            .e{
+                background-color:gray;
+                grid-area: e;
+                padding:30px;
+            }
+            @media only screen and (min-width:375px) and (max-width:768px)
+            {
+                #container{
+                display:grid;
+                grid-template-rows: 100px 250px 250px 250px;
+                grid-template-columns: repeat(12 1fr);
+                grid-gap:30px;
+                font-size: 20px;
+                padding:5px;
+                margin-top:20px;
+                grid-template-areas: 
+                "a a a a a a a a a a a a"
+                "b b b b b b c c c c c c"
+                "d d d d d d e e e e e e"
+                ;
+
+            }
+
+            }
+             @media only screen and (min-width:0px) and (max-width:375px)
+            { 
+                 #container{
+                display:grid;
+                grid-template-rows: 100px 250px 250px 250px 250px;
+                grid-template-columns: repeat(12 1fr);
+                grid-gap:10px;
+                font-size: 20px;
+                padding:10px;
+                margin-top:10px;
+                width:100%;
+                grid-template-areas: 
+                "a a a a a a a a a a a a"
+                "b b b b b b b b b b b b"
+                "c c c c c c c c c c c c"
+                "d d d d d d d d d d d d"
+                "e e e e e e e e e e e e"
+                ;
+
+            }
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "container">
+            <div class = "a">Navigation</div>
+            <div class = "b">Box 1</div>
+            <div class = "c">Box 2</div>
+            <div class = "d">Box 3</div>
+            <div class = "e">Box 4</div>
+        </div>
+    </body>
+</html>

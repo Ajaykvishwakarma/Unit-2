@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Grid Layout</title>
+        <style>
+            #container{
+                height:700px;
+                width:500px;
+                border:10px solid #b56576;
+                margin:auto;
+               
+                padding:10px
+
+            }
+            #container{
+                display:grid;
+                grid-template-rows:80px 140px 140px 200px 60px ;
+                grid-template-columns: repeat(12 1fr);
+                grid-gap:20px;
+                grid-template-areas: 
+                "a a a a a a a a a a a a"
+                "b b b b b b c c c c c c"
+                "b b b b b b d d d d d d"
+                "e e e e e e e e e e e e"
+                "f f f f f f f f f f f f"
+
+                ;
+            } 
+            .a{
+                background-color:#3d405b;
+                grid-area:a;
+                text-align:center;
+                color:white;
+               
+            }
+            .b{
+                background-color:#3d405b;
+                grid-area:b;
+                text-align:center;
+                color:white;
+            }
+            .b > h1{
+                margin-top:130px;
+            }
+            .c{
+                background-color:#3d405b;
+                grid-area:c;
+                text-align:center;
+                color:white;
+                
+            }
+            .c > h1{
+                margin-top:50px;
+            }
+            .d{
+                background-color:#3d405b;
+                grid-area:d;
+                text-align:center;
+                color:white;
+            }
+            .d > h1{
+                margin-top:50px;
+            }
+            .e{
+                background-color:#3d405b;
+                grid-area:e;
+                text-align:center;
+                color:white;
+            }
+            .e > h1{
+                margin-top:80px;
+            }
+            .f{
+                background-color:#3d405b;
+                grid-area:f;
+                text-align:center;
+                color:white;
+                
+            }
+            .f > h1{
+                margin-top:10px;
+            }
+            #line{
+                margin:auto;
+                margin-top:10px;
+                width:150px;
+                border:1px solid rgb(128, 123, 123);
+                height:1px;
+                margin-left: 59%;
+            }
+            
+        </style>
+    </head>
+    <body>       
+         <div id="container">
+            <div class="a"><h1>HEADER</h1></div>
+            <div class="b"><h1>ARTICLE</h1></div>
+            <div class="c"><h1>TEXT 1</h1></div>
+            <div class="d"><h1>TEXT 2</h1></div>
+            <div class="e"><h1>MAIN</h1></div>
+            <div class="f"><h1>FOOTER</h1></div>
+        </div>
+       <div id="line"></div>
+    </body>
+</html>

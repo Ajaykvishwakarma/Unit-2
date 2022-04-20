@@ -1,0 +1,68 @@
+<style>
+#name{
+    margin-bottom: 15px;
+    height: 27px;
+    width:300px;
+}
+#price{
+    margin-bottom: 15px;
+    height: 27px;
+    width:300px;
+}
+#img{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 27px;
+    width:300px;
+}
+
+</style>
+<html>
+    <body>
+        <h1>Admin Page</h1>
+        <form id="form">
+            <label>Brand Name</label><br>
+            <input id="name" type="text" placeholder="Enter the products name"/><br>
+            <label>Price</label><br>
+            <input id="price" type="number" placeholder="Enter price"/><br>
+            <select id="select">
+                <option value="shoes">shoes</option>
+                <option value="t-shirt">T-shirt</option>
+                <option value="bag">Bag</option>
+                <option value="pant">pant</option>
+            </select><br>
+            <input id="img" type="text" placeholder="Enter img url"/><br>
+            <input type="submit"/>
+        </form>
+        <button>Go To Product Page</button>
+
+    </body>
+</html>
+<script>
+    document.querySelector("#form").addEventListener("submit",addItem);
+    var prob=JSON.parse(localStorage.getItem("prodList"))||[];
+
+    function addItem(event){
+        event.preventDefault();
+        var name=document.querySelector("#name").value;
+        var price=document.querySelector("#price").value;
+        var type=document.querySelector("#select").value;
+        var img=document.querySelector("#img").value;
+
+        var prodObj ={
+            name:name,
+            price:price,
+            type:type,
+            image:img
+        };
+        prob.push(prodObj);
+        localStorage.setItem("prodList",JSON.stringify(prob));
+
+        document.querySelector("button").addEventListener("click",function(){
+            window.location.href="products.html";
+        })
+
+
+    }
+
+</script>

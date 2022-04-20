@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Cards in JS</title>
+        <style>
+            div{
+                height:300px;
+                width:70%;
+                margin:auto;
+                border:1px solid gray;
+                 border-radius: 5px;
+                display:flex;
+            }
+            div > div:nth-child(1){
+               margin-left:0px;
+                width:35%;
+                border:none;
+               
+
+            }
+            div > div:nth-child(2){
+                border:none;
+                width:60%;
+                display:grid;
+                grid-template-rows: 70px;
+                grid-template-columns: repeat(3 1fr);
+
+                
+              }
+              button{
+                  height:60px;
+                  width:200px;
+                  background-color:#007bff;
+                  border-radius: 5px;
+                  border:none;
+                  font-size:20px;
+                  color:white;
+                  
+              }
+              p{
+                  font-size:25px;
+                  font-family: Arial;;
+              }
+        </style>
+    </head>
+    <body>
+
+    </body>
+
+</html>
+<script>
+    var div = document.createElement('div')
+    var div1 = document.createElement('div')
+    var div2 = document.createElement('div')
+    div.append(div1,div2)
+    var image = document.createElement('img')
+    image.setAttribute("src","https://via.placeholder.com/330x300");
+    div1.append(image)
+    var head = document.createElement('h2')
+    var para =   document.createElement('p')
+    var btn = document.createElement('button')
+    head.textContent = "Alice Liddel";
+    para.textContent = "Alice is a freelanc web designer and devoloper based in london. she is specialized in HTML5, CSS3, JavaScript, Bootsrap, etc."
+    btn.textContent = "View Profile";
+   div2.append(head,para,btn)
+
+
+
+
+
+    var body = document.querySelector('body')
+    body.appendChild(div)
+    
+</script>

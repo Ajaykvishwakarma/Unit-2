@@ -1,0 +1,112 @@
+<style>
+    #fd{
+        display:flex;
+    }
+   
+    .imgp{
+        display: flex;
+        height:40px;
+        width:110px;
+        justify-content:right;
+    }
+    #cont{
+        height:400px;
+        width:700px;
+        margin-left: 10px;
+        display:flex;
+    }
+
+</style>
+<html>
+    <body>
+        <h1>Welcome To Amazon</h1>
+        <select id="priceSort" onchange="hpriceSort()">
+            <option value="">---</option>
+            <option value="low">Low to High</option>
+            <option value="high">High To Low</option>
+        </select>
+        <select id="category"onchange="filterCat()">
+            <option value="">---</option>
+            <option value="Adidas">Adidas</option>
+            <option value="HRX">Hrx</option>
+            <option value="KTM">Ktm</option>
+            <option value="Bengali's T-shirt">Bengali T-shirt</option>
+            <option value="Puma">puma</option>
+        </select><br>
+        <div class="imgp"></div><br>
+        <div id="cont"></div>
+
+    </body>
+</html>
+<script>
+    var arr= JSON.parse(localStorage.getItem("prodList"));
+    var cart=JSON.parse(localStorage.getItem("cartList"))||[];
+    displayList(arr);
+
+    //  var button1=document.createElement("button");
+    //  button1.textContent="CheckOut";
+    //  button1.addEventListener("click",function(){
+    //      window.location.href="AddToCart.html"
+    //  })
+    //  document.querySelector(".imgp").append(button1);
+
+    function hpriceSort(){
+        var selected=document.querySelector("#priceSort").value;
+        if(selected =="high"){
+            arr.sort(function(a,b){
+                return Number(b.price)- Number(a.price);
+            });
+        }
+        if(selected =="low"){
+            arr.sort(function(a,b){
+                return Number(a.price)- Number(b.price);
+            });
+        }
+        displayList(arr);
+        
+    }
+    function filterCat(){
+        var selected=document.querySelector("#category").value
+        var filterItem=arr.filter(function(elem){
+            return elem.name == selected;
+        })
+        displayList(filterItem);
+    }
+  function displayList(arr){
+    document.querySelector("#cont").innerHTML="";
+    arr.map(function(elem){
+        var div=document.createElement("div");
+        var img = document.createElement("img");
+        img.setAttribute("src", elem.image);
+
+       var h2= document.createElement("h2")
+        h2.textContent= elem.name;
+
+        var price= document.createElement("p");
+         price.textContent= elem.price;
+         var button=document.createElement("button");
+         button.textContent="add to cart";
+         button.addEventListener("click",function(){
+             addToCart(elem);
+         })
+        
+       div.append(img,h2,price,button);
+       document.querySelector("#cont").append(div);
+
+    });
+}
+    function addToCart(elem){
+        console.log(elem);
+
+     var cartObj={
+         itemImg:elem.img,
+         itemBrand:elem.name,
+         itemPrice:elem.price,
+     };
+
+     cart.push(cartObj);
+     localStorage.setItem("cartList",JSON.stringify(cart));
+
+    }
+
+</script>

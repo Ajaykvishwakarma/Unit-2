@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp</title>
+    <style>
+ 
+
+               .container{
+            width:100%;
+            margin-top: 100px;;
+            
+             }
+        .container > div{
+  
+            width:40%;
+            margin:auto;
+            padding:50px;
+            font-size: 20px;
+            font-family: Arial;
+            background-color: aliceblue;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        input{
+            height:25px;
+            width:90%;
+            
+        }
+        #btn{
+            width:91%;
+            height:30px;
+            margin-top: 20px;
+            background-color: bisque;
+            border: 1px solid  black;
+            border-radius: 10px;
+            
+        }
+        a{
+            text-decoration: none;
+            width:91%;
+            color:black;
+            
+        }
+    </style>
+  </head>
+  <body>
+
+    <div class = "container">
+        <div>
+           
+                <label>Enter OTP</label>
+                <br><br>
+                <input id = "otp" type = "number" placeholder="Enter Otp..."/>
+                <br> <br>
+       
+
+                <button  id = "btn" ><a href="login.html">Pay</a></button>
+            
+        </div>
+    </div>
+
+  </body>
+</html>
+<script>
+    document.querySelector("#btn").addEventListener("click",otpcheck);
+  function otpcheck(){
+      
+      var otp = document.querySelector("#otp").value;
+    
+
+      if(otp === "1234"){
+          window.location.href = "payment.html"
+          alert("Payment Successful!")
+      }
+      else{
+            alert("Try Again!")
+      }
+  }
+</script>

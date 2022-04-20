@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout_1</title>
+    <style>
+      .a{
+        
+        margin:auto;
+        margin-top:40px;
+        width:90%;
+        height:60px;
+        color:rgba(167, 167, 167, 0.616);
+        font-family:Arial;
+        
+      }
+
+      .container {
+        display: grid;
+        grid-template-rows: 200px;
+        grid-template-columns: repeat(4, 1fr);
+        
+        width: 90%;
+        grid-gap: 20px;
+        margin: auto;
+        margin-top:20px;
+       }
+    @media only screen and (min-width:0px) and (max-width:375px)
+     {
+        .a{
+        margin:auto;
+        width:90%;
+        line-height:30px;
+        height:100px;
+        margin-bottom:20px;
+       
+      }
+        .container{
+         margin:auto;
+         width:90%;
+         grid-template-rows: 100px 100px 100px 100px ;
+         grid-template-columns: repeat(1, 1fr);
+        }
+     }
+     @media only screen and (min-width:376px) and (max-width:768px)
+     {
+       .container{
+           margin:auto;
+           grid-template-rows: 200px 200px;
+           grid-template-columns: repeat(2, 1fr);
+           margin-top:20px;
+       }
+     }
+        .a{
+            
+           
+             background-color: yellow;
+         }
+         .b{
+            padding:10px;
+             background-color: red;
+             color:rgba(167, 167, 167, 0.616);
+             font-family:Arial;
+        
+         }
+         .c{
+            color:rgba(167, 167, 167, 0.616);
+              font-family:Arial;
+           
+            padding:10px;
+             background-color: rgb(67, 236, 67);
+         }
+         .d{
+            padding:10px;
+             background-color: blue;
+             color:rgba(167, 167, 167, 0.616);
+            font-family:Arial;
+        
+         }
+         .e{
+         
+             padding:10px;
+             background-color: lightgray;
+             color:rgba(167, 167, 167, 0.616);
+            font-family:Arial;
+        
+         }
+         h2{
+            font-family:Arial;
+            font-size:40px;
+            margin-top:20px;
+            
+         }
+    </style>
+  </head>
+  <body> 
+  
+        <div class = "a"><h1>Navigation</h1></div>
+    
+    <div class = "container">
+      
+        <div class = "b"><h2>Box 1</h2></div>
+        <div class = "c"><h2>Box 2</h2></div>
+        <div class = "d"><h2>Box 3</h2></div>
+        <div class = "e"><h2>Box 4</h2></div>
+    </div>
+  </body>
+</html>

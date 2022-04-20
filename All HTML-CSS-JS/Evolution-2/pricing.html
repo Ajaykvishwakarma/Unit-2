@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pricing</title>
+        <style>
+            #container{
+                height:700px;
+                width:100%;
+         
+            }
+            #container{
+                display:grid;
+                grid-template-rows: 200px 450px;
+                grid-template-columns: repeat(12 1fr);
+                grid-gap:20px;
+            }
+
+
+            .upperdiv > div{
+                text-align:center;
+                font-size:20px;
+                margin:auto;
+                width:40%;
+                font-family:Arial, Helvetica, sans-serif;
+                height:50%;
+            }
+            .lowerdiv{
+              
+                width:80%;
+                margin-left:10%;
+                display:flex;
+               
+            }
+            .cards{
+                height:100%;
+                width:30%;
+              
+                margin:auto;
+                border-radius: 5px;
+                box-shadow:2px 3px 4px 4px #fafafa;
+            }
+            .cards > div:nth-child(1)
+            {
+                height:40%;
+                width:100%;
+                text-align:center;
+            }
+            h2{
+                font-size:35px;
+                font-family:Arial, Helvetica, sans-serif;
+                margin-top:40px;
+            }
+            .heading{
+                font-size: 50px;
+                color:green;
+                font-family:Arial, Helvetica, sans-serif;
+            }
+            .italicpara{
+                font-style:Italic;
+                color:#797b7d;
+                line-height:2px;
+            }
+            .cards > div:nth-child(2)
+            {
+                height:30%;
+                width:100%;
+                
+                text-align:center;
+                font-size:20px;
+                font-family: Arial, Helvetica, sans-serif sans-serif;
+                color:#797b7d;
+            }
+            input{
+                height:50px;
+                width:50%;
+                margin-left:23%;
+                background-color: white;
+                border-color: blue;
+                border-radius:4px;
+                font-size: 20px;
+                color:blue;
+            }
+            .btn{
+                background-color:blue;
+                color:white;
+            }
+            .heading1{
+                font-size: 50px;
+                color:#f27e42;
+                font-family:Arial, Helvetica, sans-serif;
+            }
+            .heading2{
+                font-size: 50px;
+                color:#4797f2;
+                font-family:Arial, Helvetica, sans-serif;
+            }
+              
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div class="upperdiv">
+                <div><h1>Choose a plan that right for your business</h1></div>
+                <div><p>We collect reviews fro our users so you can get an honest opinion of an experience with our website are really like!</p></div>
+            </div>
+            <div class="lowerdiv">
+                 <div class="cards">
+                     <div>
+                        <h2>Starter Plan</h2>
+                        <h1 class="heading">Free</h1>
+                        <p class="italicpara">Per month</p>
+                     </div>
+                     <div>
+                         <p>We collect reviews from our users so you can get an honest opinion of what an 
+                             experience with our website
+                         </p>
+                     </div>
+                     <input type="button" value="Start Now">
+                  
+                 </div>
+                 <div class="cards"> 
+                    <div>
+                        <h2>Business Plan</h2>
+                        <h1 class="heading1">$39.00</h1>
+                        <p class="italicpara">Per month</p>
+                     </div>
+                     <div>
+                         <p>We collect reviews from our users so you can get an honest opinion of what an 
+                             experience with our website
+                         </p>
+                     </div>
+                     <input class="btn" type="button" value="Start Now">
+                 </div>
+                 <div class="cards">
+                    <div>
+                        <h2>Premium Plan</h2>
+                        <h1 class="heading2">$59.00</h1>
+                        <p class="italicpara">Per month</p>
+                     </div>
+                     <div>
+                         <p>We collect reviews from our users so you can get an honest opinion of what an 
+                             experience with our website
+                         </p>
+                     </div>
+                     <input type="button" value="Start Now">
+                 </div>
+            </div>
+        </div>
+    </body>
+</html>

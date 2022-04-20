@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Layout</title>
+        <style>
+            #container{
+                display:grid;
+                grid-template-rows: 190px 190px 190px;
+                grid-template-columns: 500px 200px;
+                grid-gap:20px;  
+               
+                padding:20px;
+                grid-template-areas: 
+                "a a b b b"
+                "a a c c c"
+                "a a d d d"
+                ;
+                
+
+            }
+            .a{
+               
+                
+                grid-area:a;
+            }
+            .b{
+               
+              
+               grid-area:b;
+              display:flex;
+           }
+           .c{
+            display:flex;
+             
+               grid-area:c;
+           }
+           .d{
+               
+            display:flex;
+               grid-area:d;
+           }
+           .para1{
+               color:red;
+               font-weight: bold;
+               
+           }
+           .para2{
+                color:rgba(143, 136, 136, 0.979);
+                font-weight: bold;
+               
+           }
+           .h1{
+               font-family: Arial;
+           }
+           .b > div{
+               width:40%;
+               height:100%;
+             
+           }
+           .c > div{
+               width:40%;
+               height:100%;
+             
+           }
+           .d > div{
+               width:40%;
+               height:100%;
+             
+           }
+           
+         
+        </style>
+    </head>
+    <body>
+        
+        <div id="container">
+            <div class="a">
+                <img src="https://via.placeholder.com/720x400"/>
+                <p class="para1">Technology</p>
+                <h1>The world's first fitness influencer was a victorian strongman</h1>
+                <p class="para2">by Pete Sariya</p>
+            </div>
+            <div class="b">
+                <div><img src="https://via.placeholder.com/200x190"/></div>
+                <div>
+                     <p class="para1">Technology</p>
+                    <h3>Needs to Rename the James Webb Space Telescope</h3>
+                    <p class="para2">by Pete Sariya</p>
+                </div>
+                
+                </div>
+            <div class="c">
+                <div><img src="https://via.placeholder.com/200x190"/></div>
+                <div>
+                     <p class="para1">Technology</p>
+                    <h3>Thease Striking Photos capture the future of human flight</h3>
+                    <p class="para2">by Pete Sariya</p>
+                </div>
+            </div>
+            <div class="d">
+                <div><img src="https://via.placeholder.com/200x190"/></div>
+                <div>
+                     <p class="para1">Technology</p>
+                    <h3>Exploring the origins of punk across America with kid Karate</h3>
+                    <p class="para2">by Pete Sariya</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

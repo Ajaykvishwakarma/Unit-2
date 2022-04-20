@@ -1,0 +1,93 @@
+
+<html>
+    <head>
+      <title>Practise Selectors</title>
+    </head>
+    <body>
+      <html>
+        <head>
+            <title>Practise Selectors</title>
+        </head>
+        <body>
+            <h1>First H1</h1>
+            <h1>Second H1</h1>
+            <h3>First H3</h3>
+            <h3>Second H3</h3>
+            <h5>First H5</h5>
+            <h5>Second H5</h5>
+            <h5>Third H5</h5>
+            <div class="green">First DIV</div>
+            <div class="red">Second DIV</div>
+            <div class="blue">Third DIV</div>
+            <p class="green">First P</p>
+            <p class="red">Second P</p>
+            <p class="blue">Third P</p>
+            <hr/>
+            <button onclick = "changeH1()">Change H1</button>
+            <button onclick = "changeH3()">Change H3</button>
+            <button onclick = "changeH5()">Change H5</button>
+            <button onclick = "changeclass()">Change Green</button>
+            <button onclick = "changeByClass()">Change Red</button>
+            <button onclick = "changeByClass1()">Change Blue</button>
+            <script>
+            </script>
+        </body>
+    </html>
+    </body>
+  </html>
+  
+  <script>
+    function changeH1(){
+       
+      var elems =  document.querySelectorAll('h1');
+      for(var i=0; i<elems.length; i++)
+      {
+        elems[i].style.color = "red";
+      }
+    }
+    function changeH3(){
+       
+       var elems =  document.querySelectorAll('h3');
+       for(var i=0; i<elems.length; i++)
+       {
+         elems[i].style.color = "green";
+       }
+     }
+     function changeH5(){
+       
+       var elems =  document.querySelectorAll('h5');
+       for(var i=0; i<elems.length; i++)
+       {
+         elems[i].style.color = "blue";
+       }
+     }
+     function changeclass(){
+       
+     var elems = document.querySelectorAll(".green");
+     for(var i=0; i<elems.length; i++)
+     {
+      elems[i].style.color = "green";
+     }
+     }
+     
+     function changeByClass(){
+       
+       var elems = document.querySelectorAll(".red");
+       for(var i=0; i<elems.length; i++)
+       {
+        elems[i].style.color = "red";
+       }
+       }
+       
+       function changeByClass1(){
+       
+       var elems = document.querySelectorAll(".blue");
+       for(var i=0; i<elems.length; i++)
+       {
+        elems[i].style.color = "blue";
+       }
+       }
+
+
+  </script>
+  

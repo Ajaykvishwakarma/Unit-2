@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <style>
+      .nav {
+        width: 90%;
+        height: 90px;
+        background-color: rgb(15, 16, 28);
+        margin: auto;
+        display: flex;
+        margin-top:20px;
+      }
+      .left {
+        width: 60%;
+        height: 100%;
+        font-size: 30px;
+        color: white;
+        padding: 30px;
+      }
+      .right {
+        color: white;
+        width: 30%;
+        display: flex;
+        justify-content: space-around;
+        padding: 30px;
+        font-size: 25px;
+
+      }
+      select {
+        padding: 1px;
+        background-color: transparent;
+        color: white;
+        border: 0;
+        font-size: 23px;
+      }
+      select > option{
+        background-color: black;
+      }
+      a{
+        text-decoration: none;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="left">MEGAWIDTH</div>
+      <div class="right">
+        <div><a href="">Home</a></div>
+        <div><a href="">About</a></div>
+        <div><a href="">Blog</a></div>
+        <div>
+          <select>
+            <option>Page</option>
+            <option>Login</option>
+            <option>Help</option>
+            <option>Donate</option>
+
+          </select>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

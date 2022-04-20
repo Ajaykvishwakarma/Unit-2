@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head><title>site_template</title></head>
+    <style>
+        .container{
+            display:grid;
+            grid-template-rows: 50px 500px 500px;
+            grid-template-columns:repeat(12 1fr);
+            grid-gap:20px;
+            grid-template-areas:
+            "h h h h h h h h h h h h"
+            "c c c c l l l l l l l l";
+            
+                
+        }
+        .h{
+            background-color: red;
+            grid-area: h;
+            border-radius:4px;
+
+        }
+        .c{
+            background-color:green;
+            grid-area: c;
+            border-radius:4px;
+        }
+        .l{
+            background-color: teal;
+            grid-area: l;
+            border-radius:4px;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <div class="h"></div>
+            <div class="c"></div>
+            <div class="l"></div>
+            
+        </div>
+    </body>
+</html>

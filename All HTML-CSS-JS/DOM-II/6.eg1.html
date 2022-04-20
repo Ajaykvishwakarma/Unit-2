@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 400px;
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src="https://via.placeholder.com/400x150" alt="" />
+      <h4>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius tenetur
+        facilis, vero aliquid ratione, deleniti ex in quas, placeat
+        necessitatibus et eveniet dolore harum laborum. Exercitationem, minus?
+        Facere, consequuntur eaque!
+      </h4>
+    </div>
+  </body>
+</html>
+
+<script>
+  // create  main div , image , child div --> h2,p,button
+  var div = document.createElement("div");
+  var image = document.createElement("img");
+  var h4 = document.createElement("h4");
+  image.setAttribute("src", "https://via.placeholder.com/400x150");
+  image.setAttribute("alt","myImage")
+  h4.textContent = "Lorem ipsum dolor,sit amet consectetur adipisicing elit. Eius teneturfacilis,vero aliquid ratione,deleniti ex in quas, placeat necessitatibus et eveniet dolore harum laborum.Exercitationem, minus?Facere, consequuntur eaque!";
+  div.append(image, h4);
+  var body = document.querySelector("body");
+  body.appendChild(div);
+</script>
+
+
+
+
+

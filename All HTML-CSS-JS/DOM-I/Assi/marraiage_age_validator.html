@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Marriage Age validator</title>
+    </head>
+    <body>
+        Enter Year Of Birth&nbsp;<input type="text" id = "year">
+        <select id="gender">
+            <option value="">--</option>
+            <option value="male">M</option>
+            <option value="female">F</option>
+        </select>
+  
+        <button onclick="showName()">SUBMIT</button>
+    </body>
+</html>
+<script>
+    
+  
+    function showName(){
+      var gender = document.querySelector('#gender').value;
+      var age = document.querySelector('#year').value;
+      var current_age = 2021-age;
+      
+      if(current_age >= 21 && gender == "male")
+      {
+        alert('Valid Age! Male')
+        
+      }
+      else if(current_age >= 18 && gender == "female")
+      {
+        alert('Valid Age! Female')
+      
+      }
+      else{
+          alert('Not Valid Age!')
+      }
+
+    }
+
+
+</script>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment page</title>
+    <link rel="stylesheet" href="payment.css">
+   
+    <!-- <link rel="stylesheet" href="https://docs.microsoft.com/en-us/typography/font-list/segoe-ui"> -->
+    <style>
+        #container{
+            display:grid;
+            margin:auto;
+            grid-template-rows: 500px;
+            grid-template-columns: repeat(3,1fr);
+            
+
+        }
+        #container > div:nth-child(1){
+            width:60%;
+            height:100%;
+           
+        }
+        #container > div:nth-child(2){
+            width:100%;
+            height:100%;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            background-color: aliceblue;
+            padding:30px;
+        }
+        #container > div:nth-child(3){
+           text-align: center;
+            height:100%;
+           
+            
+            
+        }
+        #name{
+            height:20px;
+            width:400px;
+        }
+        #cardN{
+            height:20px;
+            width:400px;
+        }
+        #cvv{
+            height:20px;
+            width:400px;
+        }
+        #date{
+            height:20px;
+            width:400px;
+        }
+        #sub{
+            margin-left: 40px;
+            width:300px;
+            margin-top:30px;
+            height:40px;
+            color:white;
+            border-radius: 10px;
+            border:none;
+            background-color: coral;
+        }
+        h1{
+            width:30%;
+            height:50px;
+            justify-content: center;
+            
+            margin:auto;
+          
+        }
+    
+
+    </style>
+    </head>
+<body>
+    <div id = "container">
+        <div></div>
+        <div>
+            <h1>Payment</h1>
+            <form id = "form">
+                <label>Name</label>
+                <br><br>
+                <input type = "text" id ="name" placeholder = "Enter Name..."/>
+                <br><br>
+                <label>Card Number</label>
+                <br><br>
+                <input type = "text" id ="cardN" placeholder = "Enter Name..."/>
+                <br><br>
+                <label>CVV</label>
+                <br><br>
+                <input type = "text" id ="cvv" placeholder = "Enter Name..."/>
+                <br><br>
+                <label>Expiry date</label>
+                <br><br>
+                <input type = "date" id ="date" placeholder = "Enter Name..."/>
+                <br><br>
+                <input type ="submit" id ="sub" value ="Submit"/>
+            </form>
+        </div>
+        <div></div>
+    </div>
+</body>
+</body>
+</html>
+<script> 
+document.querySelector("#form").addEventListener("submit", paymentpart)
+
+ var data=JSON.parse(localStorage.getItem("paymentdata"))||[]
+function paymentpart(event){
+    event.preventDefault()
+    var name=document.querySelector("#name").value
+    var cardN=document.querySelector("#cardN").value
+    var cvv=document.querySelector("#cvv").value
+    var date=document.querySelector("#date").value
+
+     if(cardN == "" || cardN.length != 16){
+        alert("Error")
+    }
+    else if(cvv == "" || cvv.length != 3){
+        alert("Error")
+    }
+
+
+    //  console.log(name,cardN,cvv,date)
+    //console.log("here");
+    var obj={
+        name:name,
+        cardN:cardN,
+        cvv:cvv,
+        date:date,   
+    }
+     data.push(obj)
+     console.log(obj.length)
+     localStorage.setItem("paymentdata",JSON.stringify(data))
+     
+}
+</script>

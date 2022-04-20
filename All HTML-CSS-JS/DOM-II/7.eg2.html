@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        padding: 10px 25px;
+        border: 0;
+        margin-right: 20px;
+      }
+      #container {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+        
+    </div>
+  </body>
+</html>
+
+<script>
+  // variables --- > bgcolor,text
+
+  var buttonData = [
+    {
+      bgColor: "blue",
+      text: "primary",
+    },
+    {
+      bgColor: "grey",
+      text: "secondary",
+    },
+    {
+      bgColor: "green",
+      text: "success",
+    },
+    {
+      bgColor: "red",
+      text: "Danger",
+    },
+    {
+      bgColor: "yellow",
+      text: "Warning",
+    },
+    {
+      bgColor: "cyan",
+      text: "Info",
+    },
+  ];
+
+  console.log(buttonData);
+
+  buttonData.map(function (elem) {
+    //   console.log(elem.text)
+    var btn = document.createElement("button");
+    btn.textContent = elem.text;
+    btn.style.backgroundColor = elem.bgColor;
+    document.querySelector("#container").append(btn);
+    document.querySelector("body").append(div);
+  });
+
+  //   var btn1 = document.createElement("button");
+  //   var btn2 = document.createElement("button");
+  //   var btn3 = document.createElement("button");
+  //   var btn4 = document.createElement("button");
+  //   var btn5 = document.createElement("button");
+  //   var btn6 = document.createElement("button");
+
+  //   btn1.textContent = "primary";
+  //   btn2.textContent = "Secondary";
+  //   btn3.textContent = "Success";
+  //   btn4.textContent = "Dannger";
+  //   btn5.textContent = "Warning";
+  //   btn6.textContent = "Info";
+
+  //   btn1.style.backgroundColor = "blue";
+  //   btn2.style.backgroundColor = "grey";
+  //   btn3.style.backgroundColor = "green";
+  //   btn4.style.backgroundColor = "red";
+  //   btn5.style.backgroundColor = "yellow";
+  //   btn6.style.backgroundColor = "cyan";
+</script>

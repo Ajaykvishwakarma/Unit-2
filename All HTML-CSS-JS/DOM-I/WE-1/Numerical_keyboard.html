@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculaor</title>
+        <style>
+            .container{
+                display:grid;
+                grid-template-rows: 120px 70px 70px 70px;
+                grid-template-columns: repeat(12 1fr);
+                grid-gap:20px;
+                width:40%;
+                border:1px solid black;
+                padding:30px;
+                margin:auto;
+                margin-top:50px;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                
+ 
+                grid-template-areas: 
+                "a a a a a a a a a a a a"
+                "b b b c c c d d d e e e"
+                "f f f g g g h h h i i i"
+                "j j j k k k l l l l l l"
+                ;
+            }
+
+            #out{
+                grid-area:a;
+                border-radius:4px;
+               
+                font-size:30px;
+                height:40px;
+                padding:30px;
+                text-align:right;
+                border:1px solid black;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+            .btn1{
+                background-color: black;
+                grid-area:b;
+                padding:20px;
+                font-size:25px;
+                color:white;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                border-radius:4px;
+            }
+            .btn2{
+                background-color: black;
+                grid-area:c;
+                padding:20px;
+                font-size:25px;
+                color:white;
+                border-radius:4px;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+            .btn3{
+                background-color: black;
+                grid-area:d;
+                color:white;
+                font-size:25px;
+                padding:20px;
+                border-radius:4px;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+            .btn4{
+                background-color: black;
+                grid-area:e;
+                color:white;
+                font-size:25px;
+                padding:20px;
+                border-radius:4px;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+            .btn5{
+                background-color: black;
+                grid-area:f;
+                color:white;
+                font-size:25px;
+                padding:20px;
+                border-radius:4px;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+            .btn6{
+                background-color: black;
+                grid-area:g;
+                color:white;
+                padding:20px;
+                font-size:25px;
+                border-radius:4px;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+            .btn7{
+                background-color: black;
+                grid-area:h;
+                padding:20px;
+                font-size:25px;
+                color:white;
+                border-radius:4px;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+            .btn8{
+                background-color: black;
+                grid-area:i;
+                font-size:25px;
+                color:white;
+                padding:20px;
+                border-radius:4px;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+            .btn9{
+                background-color: black;
+                grid-area:j;
+                padding:20px;
+                font-size:25px;
+                color:white;
+                border-radius:4px;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+            .btn10{
+                background-color: black;
+                grid-area:k;
+                color:white;
+                font-size:25px;
+                padding:20px;
+                border-radius:4px;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+            .clear{
+                background-color: black;
+                grid-area:l;
+                padding:20px;
+           
+                font-size:25px;
+                color:white;
+                border-radius:4px;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                
+            }
+        </style>
+    </head>
+    <body>
+
+      
+        <div class = "container">
+           
+            <div id = "out"></div>
+            
+            <button class = "btn1" onclick = "press('1')">1</button>
+            <button class = "btn2" onclick = "press('2')">2</button>
+            <button class = "btn3" onclick = "press('3')">3</button>
+            <button class = "btn4" onclick = "press('4')">4</button>
+            <button class = "btn5" onclick = "press('5')">5</button>
+            <button class = "btn6" onclick = "press('6')">6</button>
+            <button class = "btn7" onclick = "press('7')">7</button>
+            <button class = "btn8" onclick = "press('8')">8</button>
+            <button class = "btn9" onclick = "press('9')">9</button>
+            <button class = "btn10" onclick = "press('0')">0</button>
+            
+            <button  class = "clear" onclick = "clearAll()">clear</button>
+            
+        </div>
+    </body>
+</html>
+<script>
+    var out = "";
+    function press(num){
+        out = out + num;
+        console.log(num)
+        document.querySelector('#out').textContent = out;
+    }
+    function clearAll(){
+        document.querySelector("#out").textContent = ""
+        out = "";
+    }
+   
+</script>

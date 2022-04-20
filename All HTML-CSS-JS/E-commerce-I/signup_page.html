@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp</title>
+    <style>
+        #logo{
+            height:100px;
+            width : 100%;
+            margin:auto;
+            margin-bottom: 10px;
+           
+        }
+        img{
+            height:100%;
+            margin:auto;
+            margin-left:42%;
+            
+        }
+        .container{
+            width:100%;
+            
+             }
+        .container > div{
+  
+            width:40%;
+            margin:auto;
+            padding:50px;
+            font-size: 20px;
+            font-family: Arial;
+            background-color: aliceblue;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        input{
+            height:25px;
+            width:90%;
+            
+        }
+        #btn{
+            width:91%;
+            height:30px;
+            margin-top: 20px;
+            background-color: bisque;
+            border: 1px solid  black;
+            border-radius: 10px;
+            
+            
+        }
+
+        a{
+            text-decoration: none;
+            width:91%;
+            color:black;
+            
+        }
+    </style>
+    </head>
+    <body>
+        <div id = "logo">
+            <img src = "https://kfinancial.com/wp-content/uploads/2019/02/amazon-logo-vector-png-vector-png-free-amazon-logos-705.jpg">
+        </div>
+        <div class = "container">
+            <div>
+            
+                    <label>E-Mail</label>
+                    <br><br>
+                    <input id = "email" type = "email" placeholder="Enter E-mail..."/>
+                    <br> <br>
+                    <label>Phone Number</label>
+                    <br><br>
+                    <input id = "mobile" type = "number" placeholder = "Enter Number..."/>
+                    <br><br>
+                    <label>Password</label>
+                    <br><br>
+                    <input id = "password" type = "password" placeholder = "Enter Password..."/>
+                    <br><br>
+                    <button id = "btn" >Sign Up</button>
+    
+            </div>
+        </div>
+    </body>
+  </html>
+  <script>
+  document.querySelector("#btn").addEventListener("click", signUp);
+  document.querySelector("#btn").addEventListener("click", function(){
+      window.location.href = "login.html"
+  })
+  var signUpdata = JSON.parse(localStorage.getItem("userDatabase")) || [];
+  function signUp() {
+      
+    var email = document.querySelector("#email").value;
+    var mobile = document.querySelector("#mobile").value;
+    var password = document.querySelector("#password").value;
+    var userCred = {
+      emailAdd: email,
+      pass: password,
+      mobile: mobile,
+    };
+    signUpdata.push(userCred);
+    localStorage.setItem("userDatabase", JSON.stringify(signUpdata));
+    
+  }
+  </script>

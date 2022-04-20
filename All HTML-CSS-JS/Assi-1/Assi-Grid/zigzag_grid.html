@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <hrad>
+    <title>zigzag_grid</title>
+    <style>
+        .container{
+            display:grid;
+            grid-template-rows: 150px 150px 150px;
+            grid-template-columns: repeat(12 1fr);
+            grid-gap:50px;
+            padding:70px;
+           
+            grid-template-areas:
+            "a a a b b b b b b c c c"
+            "d d d d d d e e e f f f"
+            "g g g h h h i i i i i i";
+        }
+      
+        .a{
+            background-color: teal;
+            grid-area: a;
+            border-radius:10px;
+
+        }
+        .b{
+            background-color: teal;
+            grid-area: b;
+            border-radius:10px;
+        }
+        .c{
+            background-color: teal;
+            grid-area: c;
+            border-radius:10px;
+        }
+        
+        
+        .d{
+            background-color: teal;
+            grid-area: d;
+            border-radius:10px;
+        }
+        .e{
+            background-color: teal;
+            grid-area: e;
+            border-radius:10px;
+        }
+        .f{
+            background-color: teal;
+            grid-area: f;
+            border-radius:10px;
+        }
+        .g{
+            background-color: teal;
+            grid-area: g;
+            border-radius:10px;
+        }
+        .h{
+            background-color: teal;
+            grid-area: h;
+            border-radius:10px;
+        }
+        .i{
+            background-color: teal;
+            grid-area: i;
+            border-radius:10px;
+        }
+        
+
+    </style>
+    </hrad>
+    <body>
+        <div id="main">
+            <div class="container">
+                <div class="a"></div>
+                <div class="b"></div>
+                <div class="c"></div>
+                <div class="d"></div>
+                <div class="e"></div>
+                <div class="f"></div>
+                <div class="g"></div>
+                <div class="h"></div>
+                <div class="i"></div>
+    
+            </div>
+        </div>
+
+    </body>
+</html>

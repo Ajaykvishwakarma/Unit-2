@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Two_grid_in_one_page</title>
+        <style>
+            #container{
+                display:grid;
+                grid-template-rows: 150px 150px 150px;
+                grid-template-columns: repeat(10 1fr);
+                grid-gap:40px;
+                padding:40px;
+                grid-template-areas: 
+                "a a a a a b b b b b"
+                "c c c d d d d d d d"
+                "e e e e e e e e e e"
+                ;
+            }
+            .a{
+                background-color: rgb(68, 68, 68);
+                grid-area:a;
+                border-radius:5px;
+            }
+            .b{
+                background-color: rgb(68, 68, 68);
+                grid-area:b;
+                border-radius:5px;
+            }
+            .c{
+                background-color: rgb(68, 68, 68);
+                grid-area:c;
+                border-radius:5px;
+            }
+            .d{
+                background-color: rgb(68, 68, 68);
+                grid-area:d;
+                border-radius:5px;
+            }
+            .e{
+                background-color: rgb(68, 68, 68);
+                grid-area:e;
+                border-radius:5px;
+            }
+            h1{
+                font-size:40px;
+                color:white;
+                margin-top:50px;
+                margin-left:20px;
+            }
+            #container1{
+                display:grid;
+                grid-template-rows: 150px 150px 150px;
+                grid-template-columns: repeat(12 1fr);
+                grid-gap:40px;
+                padding:40px;
+               
+            }
+            #container1>div:nth-child(1)
+            {
+                grid-area:1/1/2/3;
+            }
+            #container1>div:nth-child(5)
+            {
+                grid-area:1/4/3/5;
+            }
+            #container1>div:nth-child(2)
+            {
+                grid-area:1/3/3/4;
+            }
+            #container1>div:nth-child(3)
+            {
+                grid-area:2/1/3/2;
+            }#
+            #container1>div:nth-child(4)
+            {
+                grid-area:2/2/3/3;
+            }
+            .f{
+                background-color: rgb(68, 68, 68);
+               
+                border-radius:5px;
+            }
+            .g{
+                background-color: rgb(68, 68, 68);
+                
+                border-radius:5px;
+            }
+            .h{
+                background-color: rgb(68, 68, 68);
+                
+                border-radius:5px;
+            }
+            .i{
+                background-color: rgb(68, 68, 68);
+               
+                border-radius:5px;
+            }
+            .j{
+                background-color: rgb(68, 68, 68);
+                
+                border-radius:5px;
+            }
+            h1{
+                font-size:40px;
+                color:white;
+                margin-top:50px;
+                margin-left:20px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div class="a"><h1>A</h1></div>
+            <div class="b"><h1>B</h1></div>
+            <div class="c"><h1>C</h1></div>
+            <div class="d"><h1>D</h1></div>
+            <div class="e"><h1>E</h1></div>
+           
+        </div>
+        <div id="container1">
+            <div class="f"><h1>A</h1></div>
+            <div class="g"><h1>B</h1></div>
+            <div class="h"><h1>C</h1></div>
+            <div class="i"><h1>D</h1></div>
+            <div class="j"><h1>E</h1></div>
+           
+        </div>
+    </body>
+</html>

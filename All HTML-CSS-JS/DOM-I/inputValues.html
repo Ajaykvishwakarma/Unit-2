@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="inputTag" type="text" placeholder="enter your name" value=""/>
+    <input type="number" id="mobile" placeholder="enter mobile" />
+    <select id="selectTag">
+      <option value="">Male</option>
+      <option value="F">Female</option>
+    </select>
+    <button onclick="getValue()">Submit</button>
+  </body>
+</html>
+
+<script>
+  function getValue() {
+    var typedValue = document.getElementById("inputTag").value;
+    var mobileNum = document.getElementById("mobile").value;
+    var gender = document.getElementById("selectTag").value;
+    console.log(gender);
+    console.log(typedValue, mobileNum);
+  }
+
+  //console.log(document.getElementById("inputTag").value)
+</script>

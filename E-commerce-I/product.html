@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Page</title>
+  <style>
+        #container {
+        display: grid;
+        
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap:20px;
+      }
+      #container > div{
+        margin:auto;
+          width:250px;
+          padding:10px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          border-radius: 5px;
+      }
+      button{
+          height:25px;
+          width:45%;
+          background-color: bisque;
+          border-radius: 10px;
+          border: 1px solid  black;
+          margin-left: 2px;
+      }
+      img{
+          width:100%;
+          height:50%;
+      }
+      h1{
+         text-align: center;
+         height:80px;
+         padding-top:30px;
+         background: rgb(54,52,177);
+         background: radial-gradient(circle, rgba(54,52,177,1) 0%, rgba(240,247,255,1) 67%);
+         color:white;
+         font-family: "Work Sans", "Helvetica Neue", Helvetica, Helvetica, Arial, sans-serif;
+      }
+  </style>
+  </head>
+  <body>
+<h1>Your Products</h1>
+
+<div id="container"></div>
+  </body>
+</html>
+<script>
+     var products = JSON.parse(localStorage.getItem("shoppingItems"));
+     var userCart = JSON.parse(localStorage.getItem("cartsDatabase")) || [];
+  
+  products.map(function (elem) {
+    var div = document.createElement("div");
+    var img = document.createElement("img");
+    img.setAttribute("src", elem.image);
+
+    var h2 = document.createElement("h2");
+    h2.textContent = elem.name;
+
+    var price = document.createElement("p");
+    price.textContent = elem.price;
+
+    var button = document.createElement("button");
+    button.textContent = "Add to cart";
+    button.addEventListener("click", function () {
+ 
+      addToCart(elem)
+    });
+    var button1 = document.createElement("button");
+    button1.textContent = "Goto cart";
+    button1.addEventListener("click", function () {
+        window.location.href = "cart.html"
+    });
+
+    div.append(img, h2, price, button, button1);
+    document.querySelector("#container").append(div);
+  });
+// addding
+  document.querySelector("button").addEventListener("click", addToCart);
+
+  
+  function addToCart(elem){
+      
+    // var name = document.querySelector("#name").value;
+    // var image = document.querySelector("#image").value;
+    // var price = document.querySelector("#price").value;
+    var userCartdata = {
+      name: elem.name,
+      image:elem.image,
+      price:elem.price,
+    };
+    userCart.push(userCartdata);
+    localStorage.setItem("cartsDatabase", JSON.stringify(userCart));
+    
+  }
+
+
+
+  // add elems to cart array and store cart array into LS
+</script>

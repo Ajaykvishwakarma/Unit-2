@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To Do list</title>
+        <style>
+       
+            #container{
+               width:80%;
+                margin:auto;
+                background-image: linear-gradient(to right, rgba(255, 0, 0, 0.247), rgb(0, 47, 255));
+
+
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            }
+            h1{
+            text-align:center;
+            }
+         
+            thead{
+                align-items: center;
+               
+            }
+            table{
+               
+                margin:auto;
+                margin-top:40px;
+                width:50%;
+            }
+            th{
+                border:1px solid black;
+                background-color: rgb(248, 248, 113);
+            }
+            td{
+                border:1px solid black;
+                background-color: rgb(248, 248, 113);
+                text-align: center;
+            }
+            #myForm{
+                margin-left:23%;
+             }
+            button{
+                height:100%;
+                width:100%;
+                background-color: rgb(248, 248, 113);
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div id = "container">
+        <h1>Shopping List</h1>
+        <form id = "myForm">
+            <label>Item Name</label>
+            <input id= "name" type ="text" placeholder ="Enter the name">
+            <label>Quantity</label>
+            <input id="qty" type = "number" >
+            
+           
+            <input type ="submit" value ="Submit" />
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    </body>
+</html>
+<script>
+    document.querySelector("#myForm").addEventListener("submit",addItem);
+    var arr = JSON.parse(localStorage.getItem("TodoList")) || [];
+    displayTable(arr)
+    function addItem(event){
+        event.preventDefault();
+        var todoObj = {
+            itemName: myForm.name.value,
+            itemQty: myForm.qty.value,
+           
+        };
+        arr.push(todoObj);
+        localStorage.setItem("TodoList", JSON.stringify(arr));
+        displayTable(arr)
+     }
+    function displayTable(arr){
+        var tbody = document.querySelector("tbody");
+        tbody.innerHTML = "";
+        arr.map(function (elem,index){
+        var row = document.createElement("tr")
+        var td1 = document.createElement("td");
+        var td2 = document.createElement("td");
+        var td3 = document.createElement("button");
+        td3.addEventListener("click", function (){
+            deleteAll(index)
+        });
+
+        td1.textContent = elem.itemName;
+        td2.textContent = elem.itemQty;
+        td3.textContent = "delete";
+
+        row.append(td1, td2, td3)
+        tbody.append(row);
+      })
+
+    function deleteAll(index)
+    {
+        arr.splice(index,1)
+        localStorage.setItem("TodoList", JSON.stringify(arr));
+        displayTable(arr)
+    }
+    }
+   
+</script>

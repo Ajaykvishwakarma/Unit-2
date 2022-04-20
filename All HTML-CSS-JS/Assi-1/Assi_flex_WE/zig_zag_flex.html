@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Zig_Zag_Flex</title>
+        <style>
+         #container{
+             height:200px;
+             width:80%;
+             margin-top: 20px;
+             
+             margin:auto;
+             flex-wrap: nowrap;
+             flex-direction:row;
+             display:flex;
+             
+
+         }
+         #container > div:nth-child(2){
+            height:80%;
+            width:50%;
+            
+            margin-left:20px;
+            margin-top:20px;
+            border-radius:10px;
+            background-color: rgb(6, 124, 124);
+
+         }
+         #container > div:nth-child(odd){
+            height:80%;
+            width:20%;
+           
+            margin-left:20px;
+            margin-top:20px;
+            border-radius:10px;
+            background-color: rgb(6, 124, 124);
+
+         }
+  
+         #container > .midle:nth-child(1){
+            height:80%;
+            width:50%;
+            
+            margin-left:20px;
+            margin-top:20px;
+            border-radius:10px;
+            background-color: rgb(6, 124, 124);
+
+         }
+         #container > .midle:nth-child(2){
+            height:80%;
+            width:20%;
+           
+            margin-left:20px;
+            margin-top:20px;
+            border-radius:10px;
+            background-color: rgb(6, 124, 124);
+         }
+         #container > .midle:nth-child(3){
+            height:80%;
+            width:20%;
+           
+            margin-left:20px;
+            margin-top:20px;
+            border-radius:10px;
+            background-color: rgb(6, 124, 124);
+
+         }
+         #container > .last:nth-child(1){
+            height:80%;
+            width:20%;
+           
+            margin-left:20px;
+            margin-top:20px;
+            border-radius:10px;
+            background-color: rgb(6, 124, 124);
+         }
+         #container > .last:nth-child(2){
+            height:80%;
+            width:20%;
+           
+            margin-left:20px;
+            margin-top:20px;
+            border-radius:10px;
+            background-color: rgb(6, 124, 124);
+         }
+         #container > .last:nth-child(3){
+            height:80%;
+            width:50%;
+            
+            margin-left:20px;
+            margin-top:20px;
+            border-radius:10px;
+            background-color: rgb(6, 124, 124);
+
+         }
+        </style>
+    </head>
+    <bpdy>
+        <div id="container">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div id="container">
+            <div class="midle"></div>
+            <div class="midle"></div>
+            <div class="midle"></div>
+        </div>
+        <div id="container">
+            <div class="last"> </div>
+            <div class="last"></div>
+            <div class="last"></div>
+        </div>
+    </bpdy>
+</html>

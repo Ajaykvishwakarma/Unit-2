@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bozaz Products</title>
+
+    <style>
+      form > input {
+  margin-bottom: 30px;
+  margin-top: 10px;
+  width: 236px;
+  height:30px;
+
+}
+h1{
+  color:#1e7096;
+  font-family: "Google Sans", arial, sans-serif;
+  
+}
+
+form > select {
+  width: 245px;
+  height:30px;
+  margin-bottom: 30px;
+
+}
+
+
+form > input[type="submit"] {
+  background-color: #3c73d6;
+  color: white;
+  border: 0;
+  padding:5px 20px;
+  width: 80px;
+  border-radius: 5px;
+ 
+}
+
+table,
+td,
+th {
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  font-size: 15px;
+  border-collapse: collapse;
+}
+
+
+th,
+td {
+  padding: 15px;
+}
+
+#filter {
+  margin-bottom: 20px;
+}
+
+#container {
+
+  display: flex;
+  justify-content: space-around;
+  background-image: linear-gradient(to right, rgba(255, 0, 0, 0.247), rgb(45, 69, 179));
+}
+#container > div:nth-child(1){
+  height: 60%;
+border-radius: 15px;
+  margin-top:20px;
+  margin-bottom:20px;
+  padding:40px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#container > div:nth-child(2){
+  height: 60%;
+  border-radius: 15px;
+  margin-top:20px;
+  margin-bottom:20px;
+  padding:40px;
+  
+}
+label{
+  font-size: 15px;
+  font-family: "Google Sans", arial, sans-serif;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 575px) {
+  #container {
+    flex-direction: column;
+  }
+}
+button{
+  /* margin-top:20px; */
+  height:30px;
+  margin-top: 10px;
+  border:none;
+  color:white;
+  background-color: rgb(209, 148, 177);
+}
+
+    </style>
+  </head>
+  <body>
+  
+    
+    <div id="container">
+     
+      <div>
+        <h1>Add Product</h1>
+        <form id="form">
+          <label>Category</label>
+          <br/><br>
+          <select id="cat">
+            <option value="">select category</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Home Appliance">Home Appliance</option>
+            <option value="Books">Books</option>
+          </select>
+          <br />
+          <label>Title</label>
+          <br>
+          <input type="text" id="title" placeholder="Enter Title" />
+          <br />
+          <label>Description</label>
+           <br><br>
+          <textarea
+            name=""
+            id="desc"
+            cols="30"
+            rows="5"
+            placeholder="enter description"
+          ></textarea>
+          <br /><br>
+          <label>Price</label>
+          <br>
+          <input type="number" id="price" placeholder="Enter Price" />
+          <br />
+          <input type="submit" value="Add" />
+        </form>
+      </div>
+      <div id="display">
+        <h1>Product Info</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>#Id</th>
+              <th>Category</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  document.querySelector("#form").addEventListener("submit",formSubmit)
+var bozazArr = JSON.parse(localStorage.getItem("bozazData"))||[]
+displayTable(bozazArr)
+var count = 0;
+function formSubmit(event){
+
+    event.preventDefault()
+count++;
+    var bozazObj={
+        category:form.cat.value,
+        title:form.title.value,
+        description:form.desc.value,
+        price:form.price.value,
+        id:count
+    }
+console.log(count)
+
+    bozazArr.push(bozazObj)
+    displayTable(bozazArr)
+    localStorage.setItem("bozazData",JSON.stringify(bozazArr))
+}
+
+
+function displayTable(bozazArr){
+    var tbody = document.querySelector("tbody")
+    tbody.textContent=""
+    console.log(bozazArr)
+    bozazArr.map(function(elem,index){
+        var tr = document.createElement("tr")
+        var tdId = document.createElement("td")
+        var td1 = document.createElement("td")
+        var td2 = document.createElement("td")
+        var td3 = document.createElement("td")
+        var td4 = document.createElement("td")
+       
+        var td5 = document.createElement("button")
+       
+        td5.addEventListener('click',function(){
+            deleteRow(index)
+        })
+
+        tdId.textContent = elem.id,
+        td1.textContent=elem.category
+        td2.textContent=elem.title
+        td3.textContent=elem.description
+        td4.textContent=elem.price
+        td5.textContent="Remove"
+
+        tr.append(tdId,td1,td2,td3,td4,td5)
+        tbody.append(tr)
+    })
+
+    function deleteRow(index){
+        bozazArr.splice(index,1)
+        localStorage.setItem("bozazData",JSON.stringify(bozazArr))
+        displayTable(bozazArr)
+    }
+  }
+</script>

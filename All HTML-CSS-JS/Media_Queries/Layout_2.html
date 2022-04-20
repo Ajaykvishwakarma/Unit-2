@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Layout_1</title>
+        <style>
+         .container{
+             display:grid;
+             grid-template-rows: 100px 250px;
+             grid-template-columns:repeat(4 1fr);
+             grid-gap:20px;
+             padding:20px;
+             grid-template-areas: 
+             "a a a a"
+             "b c d e"
+             ;
+
+
+         }
+         h1{
+            margin:30px 20px;
+             font-size: 40px;
+             color:black;
+             font-family: Arial;
+         }
+         h2{
+             margin:20px;
+             font-size: 40px;
+             color:darkgray;
+             font-family: Arial;
+         }
+         
+         
+@media only screen and (min-width:0px) and (max-width:375px)
+     {
+       .container{
+         width:100%;
+         grid-template-rows:100px 100px 100px 100px 100px;
+         grid-template-columns: repeat(1, 1fr);
+         grid-template-areas:
+         "a"
+         "b"
+         "c"
+         "d"
+         "e"
+         ;
+   
+       }
+     }
+@media only screen and (min-width:376px) and (max-width:768px)
+     {
+       .container{
+         
+         grid-template-rows:100px 200px 200px;
+         grid-template-columns: repeat(2, 1fr);
+         grid-template-areas:
+         "a a"
+         "b c"
+         "d e"
+         ;
+   
+       }
+     }
+    
+        </style>   
+    </head>
+    <body>
+        <div class = "container">
+            <div class = "a"><h1>Navigation</h1></div>
+            <div class = "b"><h2>Box 1</h2></div>
+            <div class = "c"><h2>Box 2</h2></div>
+            <div class = "d"><h2>Box 3</h2></div>
+            <div class = "e"><h2>Box 4</h2></div>
+        </div>
+    </body>
+</html>

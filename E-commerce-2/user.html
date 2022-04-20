@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add product</title>
+    <style>
+     #logo{
+            height:100px;
+            width : 100%;
+            margin:auto;
+            margin-bottom: 10px;
+           
+        }
+        img{
+            height:100%;
+            margin:auto;
+            margin-left:42%;
+            
+        }
+        .container{
+            width:100%;
+            
+             }
+        .container > div{
+  
+            width:40%;
+            margin:auto;
+            padding:50px;
+            font-size: 20px;
+            font-family: Arial;
+            background-color: aliceblue;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        input{
+            height:25px;
+            width:90%;
+            
+        }
+        #price{
+            width:58%;
+        }
+        #cat{
+            width:31%;
+            height:30px;
+        }
+        #btn{
+            width:40%;
+            height:30px;
+            margin-top: 20px;
+            background-color: bisque;
+            border: 1px solid  black;
+            border-radius: 10px;
+            
+            
+        }
+        button{
+            width:40%;
+            height:30px;
+            margin-top: 20px;
+            background-color: bisque;
+            border: 1px solid  black;
+            border-radius: 10px;
+        }
+
+        a{
+            text-decoration: none;
+            width:91%;
+            color:black;
+            
+        }
+    </style>
+  </head>
+  <body>
+    <div id = "logo">
+        <img src = "https://kfinancial.com/wp-content/uploads/2019/02/amazon-logo-vector-png-vector-png-free-amazon-logos-705.jpg">
+    </div>
+    <div class = "container">
+        <div>
+        <form id = "form">
+                <label>Name</label>
+                <br><br>
+                <input id = "name" type = "text" placeholder="Enter name of product..."/>
+                <br> <br>
+                <label>Price</label>
+                <br><br>
+                <input id = "price" type = "number" placeholder = "Enter price..."/>
+                <select id = "cat">
+                    <option value = "">Type</option>
+                    <option value = "shoe">Shoe</option>
+                    <option value = "tshirts">T-shirts</option>
+                    <option value = "ladies">Ladies</option>
+                    <option value = "homeapp">Home applience</option>
+                    <option value = "electronic">Electronic</option>
+                    <option value = "kids">Kids</option>
+                </select>
+                <br><br>
+                <label>Image</label>
+                <br><br>
+                <input id = "img" type = "text" placeholder = "Enter image..."/>
+                <br><br>
+                <input id = "btn" type = "submit" value = "Add Product"/>
+                <button >Goto products</button>
+            </form>
+        </div>
+    </div>
+  </body>
+</html>
+<script>
+document.querySelector("#form").addEventListener("submit", addItem);
+  var prod = JSON.parse(localStorage.getItem("shoppingItems")) || [];
+  function addItem(event) {
+    event.preventDefault();
+    var name = document.querySelector("#name").value;
+    var price = document.querySelector("#price").value;
+    var type = document.querySelector("#cat").value;
+    var image = document.querySelector("#img").value;
+
+    var prodObj = {
+      name: name,
+      price: price,
+      type: type,
+      image: image,
+    };
+    prod.push(prodObj);
+    localStorage.setItem("shoppingItems", JSON.stringify(prod));
+  }
+  
+
+  document.querySelector("button").addEventListener("click", function () {
+    window.location.href = "product.html";
+  });
+</script>

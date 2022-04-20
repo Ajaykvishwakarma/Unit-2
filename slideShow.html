@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            img{
+                width:100%;
+                height:300px;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+      <button onclick="Start()">Start</button>
+      <button onclick="Stop()">Stop</button>
+      <a href = "build_custom_slideShow.html"><button>Back</button></a> 
+      <div  id ="slideshow"></div>
+
+    </body>
+</html>
+<script>
+      let id;
+      function Start(){
+          let div = document.getElementById("slideshow")
+          div.innerHTML ="";
+          let images = JSON.parse(localStorage.getItem("images"))
+          let img = document.createElement("img");
+        // console.log(images)
+        img.src = images[0]
+        div.append(img)
+        let i = 1;
+        id = setInterval(function() {
+            if(i === images.length){
+                i=0;
+            }
+            img.src = images[i]
+            div.append(img)
+
+            i++;
+        }, 2000);
+        
+        }
+        
+
+        function Stop(){
+            clearInterval(id);
+        }
+
+</script>
+

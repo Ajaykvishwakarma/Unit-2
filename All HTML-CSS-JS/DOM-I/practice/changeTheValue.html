@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Change the value ovf given in tags</title>
+    </head>
+    <body>
+        <input id = "inputTag" type="text" placeholder = "Enter Your name" value = "Ajay" />
+        <input id ="num" type="number" />
+        <button onclick="GetValue()">Submit</button>
+    </body>
+</html>
+
+<script>
+    function GetValue(){
+        var res = document.getElementById("inputTag").value;
+        console.log(res)
+        var res1 = document.getElementById("num").value;
+        var res3 = Number(res1) + 2;
+        console.log(res3)
+    }
+</script>

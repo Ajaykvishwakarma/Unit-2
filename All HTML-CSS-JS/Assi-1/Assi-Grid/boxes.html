@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Grid-1</title>
+        <style>
+            .container{
+                display:grid;
+                grid-template-rows:200px 200px;
+                grid-template-columns:repeat(10 1fr);
+                grid-gap:20px;
+                grid-template-areas: 
+                "a a b b c c d d e e"
+                "f f g g h h i i j j"
+                ;
+            }
+            .container{
+                margin:30px 40px;
+            }
+            .a{
+                background-color: rgba(4, 88, 88, 0.918);
+                grid-area:a;
+                border-radius:5px;
+            }
+            .b{
+                background-color: rgba(4, 88, 88, 0.918);
+                grid-area:b;
+                border-radius:5px;
+            }
+            .c{
+                background-color: rgba(4, 88, 88, 0.918);
+                grid-area:c;
+                border-radius:5px;
+            }
+            .d{
+                background-color: rgba(4, 88, 88, 0.918);
+                grid-area:d;
+                border-radius:5px;
+            }
+            .e{
+                background-color: rgba(4, 88, 88, 0.918);
+                grid-area:e;
+                border-radius:5px;
+            }
+            .f{
+                background-color: rgba(4, 88, 88, 0.918);
+                grid-area:f;
+                border-radius:5px;
+            }
+            .g{
+                background-color: rgba(4, 88, 88, 0.918);
+                grid-area:g;
+                border-radius:5px;
+            }
+            .h{
+                background-color: rgba(4, 88, 88, 0.918);
+                grid-area:h;
+                border-radius:5px;
+            }
+            .i{
+                background-color: rgba(4, 88, 88, 0.918);
+                grid-area:i;
+                border-radius:5px;
+            }
+            .j{
+                background-color: rgba(4, 88, 88, 0.918);
+                grid-area:j;
+                border-radius:5px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="a"></div>
+            <div class="b"></div>
+            <div class="c"></div>
+            <div class="d"></div>
+            <div class="e"></div>
+            <div class="f"></div>
+            <div class="g"></div>
+            <div class="h"></div>
+            <div class="i"></div>
+            <div class="j"></div>
+        
+        </div>
+    </body>
+</html>
